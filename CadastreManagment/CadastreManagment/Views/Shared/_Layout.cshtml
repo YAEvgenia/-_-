@@ -1,0 +1,60 @@
+﻿
+<!DOCTYPE html>
+
+    <nav>
+        <div>
+            <a href="#"> @Html.ActionLink("Кадастровое управление", "Index", "Home", new { @class = "molk" })</a>
+            <ul>
+                <li>
+                    <a href="">@Html.ActionLink("Главная", "Index", "Home")</a>
+                </li>
+                <li>
+                    <a href="">@Html.ActionLink("Кадастр", "About", "Home")</a>
+                </li>
+                <li>
+                    <a href="">@Html.ActionLink("Справочник", "Index", "Directory")</a>
+                </li>
+                <li>
+                    <a href="">
+                        @if (ViewContext.HttpContext.User.IsInRole("admin"))
+                        {
+                            @Html.ActionLink("Личный кабинет", "Contact", "Home")}
+                        else if (ViewContext.HttpContext.User.IsInRole("user"))
+                        {@Html.ActionLink("Личный кабинет", "userOffice", "Home")}
+                    else
+                    {@Html.ActionLink("Личный кабинет", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })}
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div id="conteiner">
+        <div id="main"> </div>
+        @RenderBody()
+
+    </div>
+    <div id="footer">
+
+        <p>&copy; @DateTime.Now.Year - мое приложение ASP.NET</p>
+
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

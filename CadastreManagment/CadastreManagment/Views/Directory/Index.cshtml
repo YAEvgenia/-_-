@@ -1,0 +1,56 @@
+﻿@model IEnumerable<CadastreManagment.Directory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="zagolovok">Справочник типов кадастровых объектов</h2>
+<p>
+    @if (ViewContext.HttpContext.User.IsInRole("admin"))
+    {
+        @Html.ActionLink("Добавить новый", "Create", null, new { @class = "edit" })}
+
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Тип кадастрового объекта
+        </th>
+        <th>
+            Описание
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                <p>
+                    @if (ViewContext.HttpContext.User.IsInRole("admin"))
+                    {
+                        @Html.ActionLink("Изменить", "Edit", new { type = item.Type }, new { @class = "edit" })}
+
+
+                </p>
+                <p>@Html.ActionLink("Подробнее", "Details", new { type = item.Type }, new { @class = "details" })</p>
+
+                <p>
+                    @if (ViewContext.HttpContext.User.IsInRole("admin"))
+                    {
+                        @Html.ActionLink("Удалить", "Delete", new { type = item.Type }, new { @class = "delete" })}
+
+
+                </p>
+            </td>
+        </tr>
+    }
+
+</table>

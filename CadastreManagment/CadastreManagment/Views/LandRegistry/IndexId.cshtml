@@ -1,0 +1,58 @@
+﻿@model IEnumerable<CadastreManagment.LandRegistry>
+
+@{
+    ViewBag.Title = "IndexId";
+}
+
+<h2 class="zagolovok">Ваши земельные кадастры</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Площадь
+        </th>
+        <th>
+            Адрес
+        </th>
+        <th>
+            Стоимость
+        </th>
+        <th>
+            Дата создания
+        </th>
+        <th>
+            Паспортные данные владельца
+        </th>
+        <th>
+            Налоговый коэффициент
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApprovalDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Passport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tax_coefficint)
+        </td>
+        <td>
+            @Html.ActionLink("Налоги", "IndexId", "Tax",  new { cadastreId = item.Id, cadastreType = "Земельный кадастр" }, new { @class = "edit" }) 
+        </td>
+    </tr>
+}
+
+</table>

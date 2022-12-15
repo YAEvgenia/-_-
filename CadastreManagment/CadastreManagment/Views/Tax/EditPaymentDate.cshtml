@@ -1,0 +1,42 @@
+﻿@model CadastreManagment.Tax
+
+@{
+    ViewBag.Title = "EditPaymentDate";
+}
+
+<h2>Оплата</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <form action="/" method="post">
+        <fieldset>
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.Price)
+            @Html.HiddenFor(model => model.Cadastre_id)
+            @Html.HiddenFor(model => model.Date_of_creation)
+            @Html.HiddenFor(model => model.Cadastre_type)
+            @Html.HiddenFor(model => model.Payment_date)
+            <label> Ваше ФИО: <input type="text" placeholder="Имя" required></label>
+            <br />
+            <label>
+                Тип кадастрового объекта:
+                @Html.DisplayFor(model => model.Cadastre_type)
+            </label>
+            <br />
+            <label> Номер карты: <input type="text" placeholder="Номер карты" required></label>
+            <br />
+            <label> Сумма к оплате:</label>
+            @Html.DisplayFor(model => model.Price)
+            <br />
+            <input type="submit" value="Сохранить" />
+            @Html.ActionLink("Вернуться к списку", "IndexId", null, new { @class = "details" })
+        </fieldset>
+    </form>
+}
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

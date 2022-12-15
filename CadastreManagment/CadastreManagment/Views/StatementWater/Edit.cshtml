@@ -1,0 +1,89 @@
+﻿@model CadastreManagment.StatementWater
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 class="zagolovok">Изменить</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div >
+
+        <hr />
+        @Html.ValidationSummary(true, "")
+        @Html.HiddenFor(model => model.Id)
+
+        <div>
+            Статус заявления:
+            <div >
+                @Html.EditorFor(model => model.Status)
+                @Html.ValidationMessageFor(model => model.Status, "")
+            </div>
+        </div>
+
+        <div >
+            Площадь:
+            <div >
+                @Html.EditorFor(model => model.Area)
+                @Html.ValidationMessageFor(model => model.Area, "")
+            </div>
+        </div>
+
+        <div >
+            Адрес:
+            <div >
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address, "")
+            </div>
+        </div>
+
+        <div >
+            Тип объекта:
+            <div >
+                @Html.EditorFor(model => model.Type)
+                @Html.ValidationMessageFor(model => model.Type, "")
+            </div>
+        </div>
+
+        <div >
+            Паспортные данные владельца:
+            <div >
+                @Html.EditorFor(model => model.Passport)
+                @Html.ValidationMessageFor(model => model.Passport, "")
+            </div>
+        </div>
+
+        <div >
+            Загрязненность воды:
+            <div >
+                @Html.EditorFor(model => model.Water_quality)
+                @Html.ValidationMessageFor(model => model.Water_quality, "")
+            </div>
+        </div>
+
+        <div>
+            Очистительная станция:
+            <div >
+                @Html.EditorFor(model => model.Water_management_facilities)
+                @Html.ValidationMessageFor(model => model.Water_management_facilities, "")
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <br />
+                <input type="submit" value="Сохранить" />
+                @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

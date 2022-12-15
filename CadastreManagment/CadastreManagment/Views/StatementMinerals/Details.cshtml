@@ -1,0 +1,67 @@
+﻿@model CadastreManagment.StatementMinerals
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="zagolovok">Подробнее</h2>
+
+<div>
+    <p class="parametr" style="color:black">Заявление на кадастр природных ископаемых</p>
+    <hr />
+    <dl >
+        <dt>
+            Статус заявления:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            Тип поленых ископаемых:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            Адрес:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            Стоимость:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Паспортные данные владельца:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            Объем:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <br />
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.Id }, new { @class = "edit" }) |
+    @Html.ActionLink("Вернуться к спсику", "Index", null, new { @class = "details" })
+</p>

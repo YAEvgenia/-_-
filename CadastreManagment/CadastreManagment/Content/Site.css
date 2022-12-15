@@ -1,0 +1,403 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-size: 18pt;
+}
+
+.zagolovok {
+    color: darkblue;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+.parametr {
+    color: darkblue;
+    font-size: 30px;
+    font-weight: bold;
+}
+.parametr1 {
+    color: darkblue;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.rok {
+    display: inline-block;
+    width:100%;
+    background:white;
+}
+
+input[type=submit] {
+    padding: 5px 10px;
+    transition: 0.4s ease-in-out;
+    border-radius: 10px;
+    border-color:darkblue;
+    color: white;
+    background: #263ba0;
+    border-bottom: 5px solid darkblue;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
+a.edit {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: 0.4s ease-in-out;
+    border-radius: 10px;
+    color: white;
+    background: #263ba0;
+    border-bottom: 5px solid darkblue;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
+    a.edit:hover {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    }
+
+a.details {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: 0.4s ease-in-out;
+    border-radius: 10px;
+    color: white;
+    background: #62ac3f;
+    border-bottom: 5px solid #2b4b1c;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
+    a.details:hover {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    }
+
+a.delete {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: 0.4s ease-in-out;
+    border-radius: 10px;
+    color: white;
+    background: #e0411d;
+    border-bottom: 5px solid #a32e14;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    margin: auto;
+}
+
+    a.delete:hover {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+    }
+
+/*Непосещенная — a:link*/
+/*Посещенная — по которой уже выполнялся переход — a:visited*/
+/*Не нажатая — над которой находится указатель мыши — a:hover*/
+/*Нажатая — которая удерживается мышью — a:active*/
+
+body {
+    padding: 0;
+    background-color: whitesmoke;
+    background-size: 50px 50px;
+}
+
+P.cite { /* Абзац с классом cite */
+    color: navy; /* Цвет текста */
+    margin-left: 20px; /* Отступ слева */
+    border-left: 1px solid navy; /* Граница слева от текста */
+    padding-left: 15px; /* Расстояние от линии до текста */
+}
+
+#link {
+    text-decoration: none;
+}
+
+
+
+
+a.molk {
+    font-size: 2.0em;
+}
+
+
+a.button8 {
+    color: darkblue;
+    width:90%;
+    text-align:center;
+    font-weight: 700;
+    text-decoration: none;
+    user-select: none;
+    padding: .5em 2em;
+    outline: none;
+    border: 2px solid;
+    border-radius: 1px;
+    border-color: #a2b3fa;
+    transition: 0.2s;
+    margin-bottom: 10px;
+    display: block;
+}
+
+    a.button8:hover {
+        background: darkblue;
+        color:white;
+    }
+
+    a.button8:active {
+        background: darkblue;
+    }
+
+nav {
+    width: 100%;
+    font-size: 1.2em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #263ba0;
+    border: none;
+    text-align: center;
+}
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0;
+        text-align: center;
+        text-decoration: none;
+    }
+
+        nav ul li {
+            display: inline-block; /*show in one line*/
+            margin: 5px; /*margin between elements*/
+            padding: 10px; /*padding inside element*/
+            transition: all 0.5s ease-in-out; /*ainmation*/
+            border-bottom: 0px solid whitesmoke;
+            text-decoration: none;
+        }
+
+    nav a {
+        text-decoration: none; /*remove link underline*/
+        color: whitesmoke;
+        transition: all 0.5s ease-in-out; /*ainmation*/
+    }
+
+        nav a:hover { /*link under pointer*/
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
+    nav ul li:hover { /*element under pointer*/
+        border-bottom: 5px solid whitesmoke;
+        text-decoration: none;
+    }
+
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 5px solid #fff;
+    border-top: 5px solid #fff;
+    border-bottom: 3px solid #fff;
+    border-collapse: collapse;
+    outline: 3px solid #263ba0;
+    font-size: 15px;
+    background: #fff !important;
+}
+
+    .table th {
+        font-weight: bold;
+        padding: 7px;
+        background: #263ba0;
+        border: none;
+        text-align: left;
+        font-size: 17px;
+        border-top: 3px solid #fff;
+        color: white;
+        border-bottom: 3px solid #263ba0;
+    }
+
+    .table td {
+        padding: 7px;
+        border: none;
+        border-top: 3px solid #fff;
+        border-bottom: 3px solid #fff;
+        font-size: 17px;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background: #f8f8f8 !important;
+    }
+
+.rectangle {
+    counter-reset: li;
+    list-style: none;
+    font: 14px "Trebuchet MS", "Lucida Sans";
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+    .rectangle a {
+        position: relative;
+        display: block;
+        padding: .4em .4em .4em .8em;
+        margin: .5em 0 .5em 2.5em;
+        background: #4d62c4;
+        color: whitesmoke;
+        text-decoration: none;
+        transition: all .3s ease-out;
+    }
+
+        .rectangle a:hover {
+            background: #263ba0;
+        }
+
+        .rectangle a:before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            left: -2.5em;
+            top: 50%;
+            margin-top: -1em;
+            background: #263ba0;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .rectangle a:after {
+            position: absolute;
+            content: "";
+            border: .5em solid transparent;
+            left: -1em;
+            top: 50%;
+            margin-top: -.5em;
+            transition: all .3s ease-out;
+        }
+
+        .rectangle a:hover:after {
+            left: -.5em;
+            border-left-color: #263ba0;
+        }
+
+
+.form-style-6 {
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 16px;
+    background: #a2b3fa;
+    border-radius: 4px;
+}
+
+    .form-style-6 h1 {
+        background: #263ba0;
+        padding: 20px 0;
+        font-size: 140%;
+        font-weight: 300;
+        text-align: center;
+        color: #fff;
+        margin: -16px -16px 16px -16px;
+    }
+
+    .form-style-6 input[type="text"],
+    .form-style-6 input[type="date"],
+    .form-style-6 input[type="password"],
+    .form-style-6 input[type="email"],
+    .form-style-6 input[type="number"],
+    .form-style-6 input[type="search"],
+    .form-style-6 input[type="time"],
+    .form-style-6 input[type="url"],
+    .form-style-6 textarea,
+    .form-style-6 select {
+        -webkit-transition: all 0.30s ease-in-out;
+        -moz-transition: all 0.30s ease-in-out;
+        -ms-transition: all 0.30s ease-in-out;
+        -o-transition: all 0.30s ease-in-out;
+        outline: none;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        width: 100%;
+        background: #fff;
+        margin-bottom: 4%;
+        border: 1px solid #ccc;
+        padding: 3%;
+        color: #555;
+        font: 95% Arial, Helvetica, sans-serif;
+    }
+
+        .form-style-6 input[type="text"]:focus,
+        .form-style-6 input[type="date"]:focus,
+        .form-style-6 input[type="password"]:focus,
+        .form-style-6 input[type="email"]:focus,
+        .form-style-6 input[type="number"]:focus,
+        .form-style-6 input[type="search"]:focus,
+        .form-style-6 input[type="time"]:focus,
+        .form-style-6 input[type="url"]:focus,
+        .form-style-6 textarea:focus,
+        .form-style-6 select:focus {
+            box-shadow: 0 0 5px #263ba0;
+            padding: 3%;
+            border: 1px solid #263ba0;
+        }
+
+    .form-style-6 input[type="submit"],
+    .form-style-6 input[type="button"] {
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        width: 100%;
+        padding: 3%;
+        background: #263ba0;
+        border-bottom: 2px solid #263ba0;
+        border-top-style: none;
+        border-right-style: none;
+        border-left-style: none;
+        color: #fff;
+    }
+
+        .form-style-6 input[type="submit"]:hover,
+        .form-style-6 input[type="button"]:hover {
+            background: darkblue;
+        }
+
+
+#conteiner {
+    width: 80%;
+    margin: 0 auto;
+    background: white;
+    padding: 10px;
+}
+
+
+
+#left {
+    width: 15%;
+    height: 350px;
+    background: grey;
+    float: left;
+}
+
+#main {
+    height: 150px;
+    background: white;
+}
+
+#right {
+    width: 15%;
+    height: 350px;
+    background: grey;
+    float: right;
+}
+
+#footer {
+    width: 100%;
+    height: 75px;
+    background: #263ba0;
+    clear: both;
+    color: white;
+}

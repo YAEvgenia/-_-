@@ -1,0 +1,66 @@
+﻿@model CadastreManagment.LandRegistry
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="zagolovok">Подробнее</h2>
+
+<div>
+    <p class="parametr" style="color:black">Земельный кадастр</p>
+    <hr />
+    <dl>
+        <dt>
+            Площадь:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+
+        <dt>
+            Адрес:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            Стоимость:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Дата создания:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovalDate)
+        </dd>
+
+        <dt>
+            Паспортные данные владельца:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            Налоговый коэффициент:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tax_coefficint)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.Id }, new { @class = "edit" }) |
+    @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+</p>

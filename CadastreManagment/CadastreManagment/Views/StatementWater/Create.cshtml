@@ -1,0 +1,80 @@
+﻿@model CadastreManagment.StatementWater
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="zagolovok">Создание заявления на водный кадастр</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div>
+    <p class="parametr" style="color:black">Заявления на водный кадастр</p>
+    <hr />
+    @Html.ValidationSummary(true, "")
+    
+
+    <div>
+        Площадь:
+        <div >
+            @Html.EditorFor(model => model.Area)
+            @Html.ValidationMessageFor(model => model.Area, "")
+        </div>
+    </div>
+
+    <div >
+        Адрес:
+        <div >
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address, "")
+        </div>
+    </div>
+
+    <div>
+        Тип объекта:
+        <div >
+            @Html.EditorFor(model => model.Type)
+            @Html.ValidationMessageFor(model => model.Type, "")
+        </div>
+    </div>
+
+    <div >
+        Паспортные данные владельца:
+        <div>
+            @Html.EditorFor(model => model.Passport)
+            @Html.ValidationMessageFor(model => model.Passport, "")
+        </div>
+    </div>
+
+    <div >
+        Загрязненность воды:
+        <div >
+            @Html.EditorFor(model => model.Water_quality)
+            @Html.ValidationMessageFor(model => model.Water_quality, "")
+        </div>
+    </div>
+
+    <div >
+        Очистительные станции:
+        <div >
+            @Html.EditorFor(model => model.Water_management_facilities)
+            @Html.ValidationMessageFor(model => model.Water_management_facilities, "")
+        </div>
+    </div>
+
+    <div >
+        <div>
+            <br />
+            <input type="submit" value="Создать"  />
+        </div>
+    </div>
+</div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

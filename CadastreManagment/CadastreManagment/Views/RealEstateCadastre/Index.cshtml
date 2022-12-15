@@ -1,0 +1,115 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<CadastreManagment.RealEstateCadastre>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="zagolovok">Кадастр недвижимости</h2>
+
+<p>
+    @if (ViewContext.HttpContext.User.IsInRole("admin"))
+    {
+        @Html.ActionLink("Добавить новый", "Create", null, new { @class = "edit" })}
+
+
+</p>
+
+<p>
+    @if (ViewContext.HttpContext.User.IsInRole("user"))
+    {
+        @Html.ActionLink("Ваши земельные кадастры", "IndexId", new { userId = User.Identity.GetUserId() }, new { @class = "details" })}
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Тип недвижимости:
+        </th>
+        <th>
+            Площадь:
+        </th>
+        <th>
+            Адрес:
+        </th>
+        <th>
+            Дата регистрации:
+        </th>
+        <th>
+            Паспортные данные владельца:
+        </th>
+        <th>
+            Готовность объекта:
+        </th>
+        <th>
+            Назначение объекта:
+        </th>
+        <th>
+            Этажность:
+        </th>
+        <th>
+            Налоговый коэффициент:
+        </th>
+        <th>
+            Заметки:
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Approval_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passport)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Readiness)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Appointment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Floors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tax_coefficint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+               
+
+                    <p>
+                        @if (ViewContext.HttpContext.User.IsInRole("admin"))
+                        {
+                            @Html.ActionLink("Изменить", "Edit", new { id = item.Id }, new { @class = "edit" })}
+
+
+                    </p>
+                    <p>@Html.ActionLink("Подробнее", "Details", new { id = item.Id }, new { @class = "details" })</p>
+
+                    <p>
+                        @if (ViewContext.HttpContext.User.IsInRole("admin"))
+                        {
+                            @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "delete" })}
+
+
+                    </p>
+                
+            </td>
+        </tr>
+    }
+
+</table>

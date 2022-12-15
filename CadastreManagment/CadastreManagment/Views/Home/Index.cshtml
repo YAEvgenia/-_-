@@ -1,0 +1,98 @@
+﻿@model IEnumerable<CadastreManagment.Directory>
+@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .b {
+        background-color: lightblue;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .parent > div {
+        background: #eee;
+        float: left;
+        width: 23.5%;
+        margin-right: 2%;
+    }
+
+        .parent > div:last-child {
+            margin-right: 0;
+        }
+
+    .img_class {
+        width: 250px;
+        height: 200px;
+        border: 1 px solid black;
+    }
+</style>
+<div class="rok">
+    <div style="float: left;width: 25%">
+
+        <img src="~/img/index.jpg" class="img_class" />
+
+    </div>
+    <div style="float: left;width: 75%">
+        <p>Оплати налоги и спи спокойно! Теперь налоги можно оплатить онлайн и счтиать овец не прийдется! Просто зарегистрируйтесь на сайте..</p>
+        <p>
+            @Html.ActionLink("Зарегистрироваться", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "edit" })
+            @Html.ActionLink("Войти", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "delete" })
+        </p>
+
+    </div>
+
+</div>
+<div class="rok">
+    <div style="float: left;width: 25%">
+        <h2 class="parametr">Земельный кадастр</h2>
+        <img src="~/img/земля.png" class="img_class" />
+        <h3 style="color:black">Систематизированный свод документированных данных о природном, хозяйственном и правовом положении земель.</h3>
+        <p>
+
+
+            @Html.ActionLink("Земельный кадастр", "Index", "LandRegistry", null, new { @class = "button8" })
+        </p>
+
+    </div>
+    <div style="float: left;width: 25%">
+        <h2 class="parametr">Кадастр недвижимости</h2>
+        <img src="~/img/дом.png" class="img_class" />
+        <h3 style="color:black">Систематизированный свод сведений об учтённом в установленном порядке недвижимом имуществе</h3>
+        <p>
+
+
+            @Html.ActionLink("Кадастр недвижимости", "Index", "RealEstateCadastre", null, new { @class = "button8" })
+        </p>
+
+    </div>
+    <div style="float: left;width: 25%">
+        <h2 class="parametr">Водный кадастр</h2>
+        <br />
+
+        <img src="~/img/вода.png" class="img_class" />
+        <h3 style="color:black">Сводная информация о водных объектах, представляющих единый государственный фонд водных ресурсов</h3>
+
+        <p>
+
+
+            @Html.ActionLink("Водный кадастр", "Index", "WaterCadastre", null, new { @class = "button8" })
+        </p>
+
+    </div>
+    <div style="float: left;width: 25%">
+        <h2 class="parametr">Кадастр полезных ископаемых</h2>
+        <img src="~/img/приископаемые.jpg" class="img_class" />
+        <h3 style="color:black">Систематизированный сводсведений о всех месторождениях и проявлениях полезных ископаемых</h3>
+
+        <p>
+
+
+            @Html.ActionLink("Кадастр полезных ископаемых", "Index", "Minerals", null, new { @class = "button8" })
+        </p>
+
+    </div>
+</div>
+

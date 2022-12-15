@@ -1,0 +1,81 @@
+﻿@model CadastreManagment.Minerals
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="zagolovok">Удалить</h2>
+
+<h3>Вы уверены, что хотите удалить данный кадастр?</h3>
+<div>
+    <p class="parametr" style="color:black">Земельный кадастр</p>
+    <hr />
+    <dl >
+        <dt>
+            Тип полезных ископаемых:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            Адрес:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            Стоимость:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Дата регистрации:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Approval_date)
+        </dd>
+
+        <dt>
+            Паспортные данные владельца:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            Объем:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            Налоговый коэффициент:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tax_coefficint)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div >
+            <input type="submit" value="Удалить"  /> |
+            @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+        </div>
+    }
+</div>

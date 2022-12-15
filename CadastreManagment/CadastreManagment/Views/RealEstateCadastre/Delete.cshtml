@@ -1,0 +1,106 @@
+﻿@model CadastreManagment.RealEstateCadastre
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="zagolovok">Удалить</h2>
+
+<h3>Вы уверены, что хотите удалить данный кадастр?</h3>
+<div>
+    <p class="parametr" style="color:black">Кадастр недвижимости</p>
+    <hr />
+    <dl >
+        <dt>
+            Тип недвижимости:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            Площадь:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+
+        <dt>
+            Адрес:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            Дата регистрации:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Approval_Date)
+        </dd>
+
+        <dt>
+            Паспортные данные владельца:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            Готовность объекта:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Readiness)
+        </dd>
+
+        <dt>
+            Назначение объекта:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment)
+        </dd>
+
+        <dt>
+            Этажность:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Floors)
+        </dd>
+
+        <dt>
+            Налоговый коэффициент:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tax_coefficint)
+        </dd>
+
+        <dt>
+            Заметки:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div >
+            <br />
+            <input type="submit" value="Удалить"  /> |
+            @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+        </div>
+    }
+</div>

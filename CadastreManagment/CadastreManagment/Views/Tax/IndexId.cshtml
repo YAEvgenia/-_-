@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CadastreManagment.Tax>
+
+@{
+    ViewBag.Title = "IndexId";
+}
+
+<h2 class="zagolovok">Ваши налоги</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            К оплате
+        </th>
+        <th>
+            Дата начисления
+        </th>
+        <th>
+            Дата оплаты
+        </th>
+        <th>
+            Тип кадастрового объекта
+        </th>
+        <th>
+            ID кадастра
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_of_creation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Payment_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cadastre_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cadastre_id)
+        </td>
+        <td>
+            @if (item.Payment_date == null)
+            {
+                <p style="color:orangered">Не оплачен</p>}
+            else
+            { <p style="color:darkblue">Оплачен</p>}
+
+            @if (item.Payment_date == null)
+            {
+                @Html.ActionLink("Оплатить", "EditPaymentDate", new { id = item.Id }, new { @class = "edit" })}
+
+        </td>
+    </tr>
+}
+
+</table>

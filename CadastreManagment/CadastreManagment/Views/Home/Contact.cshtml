@@ -1,0 +1,20 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "Contact";
+}
+
+<ol class="rectangle">
+    <li>
+        @Html.ActionLink("Заявления", "Statements", "Home")
+    </li>
+    <li>
+    <li>
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <a href="javascript:document.getElementById('logoutForm').submit()">Выйти</a>
+        }
+    </li>
+
+</ol>

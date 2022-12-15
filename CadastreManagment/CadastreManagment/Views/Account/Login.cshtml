@@ -1,0 +1,60 @@
+﻿@using CadastreManagment.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Выполнить вход";
+}
+
+
+<div >
+    <div>
+        <section>
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-style-6" }))
+            {
+                <h2 class="zagolovok" style="color:darkblue">Вход</h2>
+                @Html.AntiForgeryToken()
+                <h4>Используйте для входа локальную учетную запись.</h4>
+                <hr />
+                @Html.ValidationSummary(true, "")
+                <div>
+                    @Html.LabelFor(m => m.Email)
+                    <div>
+                        @Html.TextBoxFor(m => m.Email)
+                        @Html.ValidationMessageFor(m => m.Email, "")
+                    </div>
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.Password)
+                    <div>
+                        @Html.PasswordFor(m => m.Password)
+                        @Html.ValidationMessageFor(m => m.Password, "")
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div>
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <input type="submit" value="Выполнить вход" />
+                    </div>
+                </div>
+                <p >
+                    @Html.ActionLink("Регистрация нового пользователя", "Register", null, new { @style="color:white" })
+                </p>
+                @* Включите, когда будет включено подтверждение учетной записи для функции сброса пароля
+            <p>
+                @Html.ActionLink("Забыли пароль?", "ForgotPassword")
+            </p>*@
+            }
+        </section>
+    </div>
+   
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,65 @@
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<CadastreManagment.StatementLand>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="zagolovok">Заявления на земельный кадастр</h2>
+
+<p>
+    @Html.ActionLink("Создать новое", "Create", null, new { @class = "edit" })
+</p>
+<p>
+    @Html.ActionLink("Ваши заявления на земельные кадастры", "IndexId", new { userId = User.Identity.GetUserId() }, new { @class = "details" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Статус заявления
+        </th>
+        <th>
+            Площадь
+        </th>
+        <th>
+            Адрес
+        </th>
+        <th>
+            Стоимость
+        </th>
+        <th>
+            Паспортные данные владельца
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Passport)
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", new { id = item.Id }, new { @class = "edit" }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.Id }, new { @class = "details" }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "delete" }) |
+                @Html.ActionLink("Принять", "CreateLand", new { id = item.Id }, new { @class = "details" }) |
+                @Html.ActionLink("Отклонить", "RefusalLand", new { id = item.Id }, new { @class = "delete" })
+
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,72 @@
+﻿@model CadastreManagment.StatementMinerals
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="zagolovok">Создание заявления на кадастр природных ископаемых</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <p class="parametr" style="color:black">Заявления на кадастр природных ископаемых</p>
+        <hr />
+        @Html.ValidationSummary(true, "")
+        
+
+        <div >
+            Тип природных ископаемых:
+            <div >
+                @Html.EditorFor(model => model.Type)
+                @Html.ValidationMessageFor(model => model.Type, "")
+            </div>
+        </div>
+
+        <div >
+            Адрес:
+            <div>
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address, "")
+            </div>
+        </div>
+
+        <div >
+            Стоимость:
+            <div >
+                @Html.EditorFor(model => model.Price)
+                @Html.ValidationMessageFor(model => model.Price, "")
+            </div>
+        </div>
+
+        <div >
+            Паспортные данные владельца:
+            <div >
+                @Html.EditorFor(model => model.Passport)
+                @Html.ValidationMessageFor(model => model.Passport, "")
+            </div>
+        </div>
+
+        <div >
+            Объем:
+            <div >
+                @Html.EditorFor(model => model.Amount)
+                @Html.ValidationMessageFor(model => model.Amount, "")
+            </div>
+        </div>
+
+        <div >
+            <div>
+                <input type="submit" value="Создать" />
+                @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

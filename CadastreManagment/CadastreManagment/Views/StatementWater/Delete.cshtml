@@ -1,0 +1,81 @@
+﻿@model CadastreManagment.StatementWater
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="zagolovok">Удалить</h2>
+
+<h3>Вы уверены, что хотите удалить данное заявление?</h3>
+<div>
+    <p class="parametr" style="color:black">Заявления на водный кадастр</p>
+    <hr />
+    <dl >
+        <dt>
+            Статус заявления:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            Площадь:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+
+        <dt>
+            Адрес:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            Тип объекта:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            Паспортные данные владельца:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            Загрязненность воды:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Water_quality)
+        </dd>
+
+        <dt>
+            Очистительные станции:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Water_management_facilities)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div >
+            <input type="submit" value="Удалить"  /> |
+            @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+        </div>
+    }
+</div>

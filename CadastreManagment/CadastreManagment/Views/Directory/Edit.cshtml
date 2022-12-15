@@ -1,0 +1,51 @@
+﻿@model CadastreManagment.Directory
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 class="zagolovok">Изменить</h2>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+
+        <hr />
+        @Html.ValidationSummary(true, "")
+        @Html.HiddenFor(model => model.Type)
+        <div >
+            Тип кадастрового объекта:
+            <div >
+                @Html.EditorFor(model => model.Type)
+                @Html.ValidationMessageFor(model => model.Type, "")
+            </div>
+        </div>
+        <div >
+            Описание:
+            <div>
+                @Html.EditorFor(model => model.Notes)
+                @Html.ValidationMessageFor(model => model.Notes, "")
+            </div>
+        </div>
+
+        <div >
+            <div>
+                <br />
+                <input type="submit" value="Сохранить" />
+                @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

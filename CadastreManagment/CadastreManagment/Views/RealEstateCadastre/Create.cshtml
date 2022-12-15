@@ -1,0 +1,110 @@
+﻿@model CadastreManagment.RealEstateCadastre
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="zagolovok">Создание кадастра недвижимости</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        <p class="parametr" style="color:black">Кадастр недвижимости</p>
+        <hr />
+        @Html.ValidationSummary(true, "")
+        <div>
+            Тип недвижимости:
+            <div>
+                @Html.EditorFor(model => model.Type)
+                @Html.ValidationMessageFor(model => model.Type, "")
+            </div>
+        </div>
+
+        <div >
+            Площадь:
+            <div>
+                @Html.EditorFor(model => model.Area)
+                @Html.ValidationMessageFor(model => model.Area, "")
+            </div>
+        </div>
+
+        <div>
+            Адрес:
+            <div >
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address, "")
+            </div>
+        </div>
+
+        <div >
+            Дата регистрации:
+            <div >
+                @Html.EditorFor(model => model.Approval_Date)
+                @Html.ValidationMessageFor(model => model.Approval_Date, "")
+            </div>
+        </div>
+
+        <div>
+            Паспортные данные владельца:
+            <div>
+                @Html.EditorFor(model => model.Passport)
+                @Html.ValidationMessageFor(model => model.Passport, "")
+            </div>
+        </div>
+
+        <div >
+            Готовность объекта:
+            <div >
+                @Html.EditorFor(model => model.Readiness)
+                @Html.ValidationMessageFor(model => model.Readiness, "")
+            </div>
+        </div>
+
+        <div >
+            Назначение объекта:
+            <div >
+                @Html.EditorFor(model => model.Appointment)
+                @Html.ValidationMessageFor(model => model.Appointment, "")
+            </div>
+        </div>
+
+        <div>
+            Этажность:
+            <div>
+                @Html.EditorFor(model => model.Floors)
+                @Html.ValidationMessageFor(model => model.Floors, "")
+            </div>
+        </div>
+
+        <div >
+            Налоговый коэффициент:
+            <div>
+                @Html.EditorFor(model => model.Tax_coefficint)
+                @Html.ValidationMessageFor(model => model.Tax_coefficint, "")
+            </div>
+        </div>
+
+        <div>
+            Заметки:
+            <div >
+                @Html.EditorFor(model => model.Notes)
+                @Html.ValidationMessageFor(model => model.Notes, "")
+            </div>
+        </div>
+
+        <div >
+            <div>
+                <br />
+                <input type="submit" value="Создать" />
+                @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

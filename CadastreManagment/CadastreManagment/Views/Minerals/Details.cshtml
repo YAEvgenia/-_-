@@ -1,0 +1,73 @@
+﻿@model CadastreManagment.Minerals
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="zagolovok">Подробнее</h2>
+<div>
+    <p class="parametr" style="color:black">Земельный кадастр</p>
+    <hr />
+    <dl >
+        <dt>
+            Тип полезных ископаемых:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            Адрес:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            Стоимость:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Дата регистрации:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Approval_date)
+        </dd>
+
+        <dt>
+            Паспортные данные владельца:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            Объем:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            Налоговый коэффициент:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tax_coefficint)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.Id }, new { @class = "edit" }) |
+    @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+</p>

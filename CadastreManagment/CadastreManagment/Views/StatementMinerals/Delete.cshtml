@@ -1,0 +1,73 @@
+﻿@model CadastreManagment.StatementMinerals
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="zagolovok">Удалить</h2>
+
+<h3>Вы уверены, что хотите удалить данное заявление?</h3>
+<div>
+    <p class="parametr" style="color:black">Заявления на кадастр полезных ископаемых</p>
+    <hr />
+    <dl >
+        <dt>
+            Статус заявления:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            Тип природных ископаемых:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            Адрес:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            Стоимость:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            Паспортные данные владельца:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            Объем:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div >
+            <input type="submit" value="Удалить" /> |
+            @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+        </div>
+    }
+</div>

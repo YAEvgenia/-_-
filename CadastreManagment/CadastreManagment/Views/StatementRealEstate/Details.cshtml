@@ -1,0 +1,82 @@
+﻿@model CadastreManagment.StatementRealEstate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="zagolovok">Подробнее</h2>
+
+<div>
+    <p class="parametr" style="color:black">Заявление на кадастр недвижимости</p>
+    <hr />
+    <dl >
+        <dt>
+            Статус заявления:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            Тип недвижимости:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            Площадь:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+
+        <dt>
+            Адрес:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            Паспортные данные владельца
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            Готовность объекта:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Readiness)
+        </dd>
+
+        <dt>
+            Назначение объекта:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appointment)
+        </dd>
+
+        <dt>
+            Этажность:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Floors)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.Id }, new { @class = "edit" }) |
+    @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+</p>

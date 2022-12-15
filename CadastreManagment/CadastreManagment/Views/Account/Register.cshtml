@@ -1,0 +1,49 @@
+﻿@model CadastreManagment.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Регистрация";
+}
+
+
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-style-6" }))
+{
+    <h2 class="zagolovok" style="color:darkblue">Регистрация</h2>
+    <hr />
+    @Html.AntiForgeryToken()
+    <h3>Создание новой учетной записи.</h3>
+
+    @Html.ValidationSummary("")
+    <div>
+        @Html.LabelFor(m => m.Id)
+        <div>
+            @Html.TextBoxFor(m => m.Id)
+        </div>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Email)
+        <div>
+            @Html.TextBoxFor(m => m.Email)
+        </div>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Password)
+        <div>
+            @Html.PasswordFor(m => m.Password)
+        </div>
+    </div>
+    <div>
+        @Html.LabelFor(m => m.ConfirmPassword)
+        <div>
+            @Html.PasswordFor(m => m.ConfirmPassword)
+        </div>
+    </div>
+    <div>
+        <div>
+            <input type="submit" value="Регистрация" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,65 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = "userOffice";
+}
+
+<h2 class="zagolovok">Мои данные:</h2>
+<h2 class="parametr">Почта:</h2>
+@User.Identity.GetUserName()
+<h2 class="parametr">Паспортные данные:</h2>
+@User.Identity.GetUserId()
+@using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <a href="javascript:document.getElementById('logoutForm').submit()" class="delete">Выйти</a>
+}
+<br />
+<hr />
+<div class="rok">
+    <div style="float:left; width:33%">
+        <h2 class="parametr">Мои кадастры</h2>
+        <p>
+            @Html.ActionLink("Земельный кадастр", "IndexId", "LandRegistry", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+        <p>
+            @Html.ActionLink("Природные ископаемые", "IndexId", "Minerals", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+        <p>
+            @Html.ActionLink("Кадастр недвижимости", "IndexId", "RealEstateCadastre", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+        <p>
+            @Html.ActionLink("Водный кадастр", "IndexId", "WaterCadastre", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+    </div>
+    <div style="float: left; width: 33%">
+        <h2 class="parametr">Мои заявления</h2>
+        <p>
+            @Html.ActionLink("Земельный кадастр", "IndexId", "StatementLand", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+        <p>
+            @Html.ActionLink("Природные ископаемые", "IndexId", "StatementMinerals", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+        <p>
+            @Html.ActionLink("Кадастр недвижимости", "IndexId", "StatementRealEstate", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+        <p>
+            @Html.ActionLink("Водный кадастр", "IndexId", "StatementWater", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+    </div>
+    <div style="float: left;width: 30%">
+        <h2 class="parametr">Мои налоги</h2>
+        <p>
+            @Html.ActionLink("Земельный кадастр", "IndexId", "LandRegistry", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+        <p>
+            @Html.ActionLink("Природные ископаемые", "IndexId", "Minerals", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+        <p>
+            @Html.ActionLink("Кадастр недвижимости", "IndexId", "RealEstateCadastre", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+        <p>
+            @Html.ActionLink("Водный кадастр", "IndexId", "WaterCadastre", new { userId = User.Identity.GetUserId() }, new { @class = "button8" })
+        </p>
+    </div>
+</div>

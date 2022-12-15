@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CadastreManagment.StatementWater>
+
+@{
+    ViewBag.Title = "IndexId";
+}
+
+<h2 class="zagolovok">Ваши заявления на водный кадастр</h2>
+
+<p>
+    @Html.ActionLink("Создать новое", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Статус заявления
+        </th>
+        <th>
+            Площадь
+        </th>
+        <th>
+            Адрес
+        </th>
+        <th>
+            Тип объекта
+        </th>
+        <th>
+            Паспортные данные владельца
+        </th>
+        <th>
+            Уровень загрязненности
+        </th>
+        <th>
+            Очистительные станции
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Passport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Water_quality)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Water_management_facilities)
+        </td>
+       
+    </tr>
+}
+
+</table>

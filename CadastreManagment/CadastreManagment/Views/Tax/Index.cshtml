@@ -1,0 +1,58 @@
+﻿@model IEnumerable<CadastreManagment.Tax>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="zagolovok">Налоги</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "edit" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_of_creation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Payment_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cadastre_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cadastre_id)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_of_creation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payment_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cadastre_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cadastre_id)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "edit" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "details" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "delete" })
+            </td>
+        </tr>
+    }
+
+</table>

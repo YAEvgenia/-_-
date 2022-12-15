@@ -1,0 +1,88 @@
+﻿@model CadastreManagment.Minerals
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="zagolovok">Создание кадастра природных ископаемых</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div c>
+        <p class="parametr" style="color:black">Кадастр природных ископаемых</p>        
+        <hr />
+        @Html.ValidationSummary(true, "")
+        <div>
+            Тип природных ископаемых:
+            <div>
+                @Html.EditorFor(model => model.Type)
+                @Html.ValidationMessageFor(model => model.Type, "")
+            </div>
+        </div>
+
+        <div>
+            Адрес:
+            <div>
+                @Html.EditorFor(model => model.Address)
+                @Html.ValidationMessageFor(model => model.Address, "")
+            </div>
+        </div>
+
+        <div>
+            Стоимость:
+            <div>
+                @Html.EditorFor(model => model.Price)
+                @Html.ValidationMessageFor(model => model.Price, "")
+            </div>
+        </div>
+
+        <div>
+            Дата регистрации:
+            <div>
+                @Html.EditorFor(model => model.Approval_date)
+                @Html.ValidationMessageFor(model => model.Approval_date, "")
+            </div>
+        </div>
+
+        <div>
+            Паспортные данные владельца:
+            <div>
+                @Html.EditorFor(model => model.Passport)
+                @Html.ValidationMessageFor(model => model.Passport, "")
+            </div>
+        </div>
+
+        <div>
+            Объем:
+            <div>
+                @Html.EditorFor(model => model.Amount)
+                @Html.ValidationMessageFor(model => model.Amount, "")
+            </div>
+        </div>
+
+        <div>
+            Налоговый коэффициент:
+            <div>
+                @Html.EditorFor(model => model.Tax_coefficint)
+                @Html.ValidationMessageFor(model => model.Tax_coefficint, "")
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <br />
+                <input type="submit" value="Создать" />|
+                @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

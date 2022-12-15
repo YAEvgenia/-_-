@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CadastreDB" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-1FBJH54\SQLEXPRESS;Initial Catalog=CadastreDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CadastreDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CadastralAgent" Member="CadastralAgent">
+    <Type Name="CadastralAgent">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Directory" Member="Directory">
+    <Type Name="Directory">
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LandRegistry" Member="LandRegistry">
+    <Type Name="LandRegistry">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ApprovalDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Passport" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tax coefficint]" Member="Tax_coefficint" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Association Name="AutorizedUser_LandRegistry" Member="AutorizedUser" ThisKey="Passport" OtherKey="Passport" Type="AutorizedUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Minerals" Member="Minerals">
+    <Type Name="Minerals">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Approval date]" Member="Approval_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Passport" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Tax coefficint]" Member="Tax_coefficint" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Association Name="AutorizedUser_Minerals" Member="AutorizedUser" ThisKey="Passport" OtherKey="Passport" Type="AutorizedUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RealEstateCadastre" Member="RealEstateCadastre">
+    <Type Name="RealEstateCadastre">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Approval Date]" Member="Approval_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Passport" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Readiness" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Appointment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Floors" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Tax coefficint]" Member="Tax_coefficint" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="AutorizedUser_RealEstateCadastre" Member="AutorizedUser" ThisKey="Passport" OtherKey="Passport" Type="AutorizedUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WaterCadastre" Member="WaterCadastre">
+    <Type Name="WaterCadastre">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Approval date]" Member="Approval_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Passport" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Tax coefficint]" Member="Tax_coefficint" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="[Water quality]" Member="Water_quality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Water management facilities]" Member="Water_management_facilities" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="AutorizedUser_WaterCadastre" Member="AutorizedUser" ThisKey="Passport" OtherKey="Passport" Type="AutorizedUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AutorizedUser" Member="AutorizedUser">
+    <Type Name="AutorizedUser">
+      <Column Name="Passport" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="AutorizedUser_LandRegistry" Member="LandRegistry" ThisKey="Passport" OtherKey="Passport" Type="LandRegistry" />
+      <Association Name="AutorizedUser_Minerals" Member="Minerals" ThisKey="Passport" OtherKey="Passport" Type="Minerals" />
+      <Association Name="AutorizedUser_RealEstateCadastre" Member="RealEstateCadastre" ThisKey="Passport" OtherKey="Passport" Type="RealEstateCadastre" />
+      <Association Name="AutorizedUser_WaterCadastre" Member="WaterCadastre" ThisKey="Passport" OtherKey="Passport" Type="WaterCadastre" />
+      <Association Name="AutorizedUser_StatementLand" Member="StatementLand" ThisKey="Passport" OtherKey="Passport" Type="StatementLand" />
+      <Association Name="AutorizedUser_StatementMinerals" Member="StatementMinerals" ThisKey="Passport" OtherKey="Passport" Type="StatementMinerals" />
+      <Association Name="AutorizedUser_StatementWater" Member="StatementWater" ThisKey="Passport" OtherKey="Passport" Type="StatementWater" />
+      <Association Name="AutorizedUser_StatementRealEstate" Member="StatementRealEstate" ThisKey="Passport" OtherKey="Passport" Type="StatementRealEstate" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatementLand" Member="StatementLand">
+    <Type Name="StatementLand">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Passport" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="AutorizedUser_StatementLand" Member="AutorizedUser" ThisKey="Passport" OtherKey="Passport" Type="AutorizedUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatementMinerals" Member="StatementMinerals">
+    <Type Name="StatementMinerals">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Passport" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AutorizedUser_StatementMinerals" Member="AutorizedUser" ThisKey="Passport" OtherKey="Passport" Type="AutorizedUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tax" Member="Tax">
+    <Type Name="Tax">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Price" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="[Date of creation]" Member="Date_of_creation" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="[Payment date]" Member="Payment_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Cadastre type]" Member="Cadastre_type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Cadastre id]" Member="Cadastre_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatementWater" Member="StatementWater">
+    <Type Name="StatementWater">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Passport" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Water quality]" Member="Water_quality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[Water management facilities]" Member="Water_management_facilities" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="AutorizedUser_StatementWater" Member="AutorizedUser" ThisKey="Passport" OtherKey="Passport" Type="AutorizedUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatementRealEstate" Member="StatementRealEstate">
+    <Type Name="StatementRealEstate">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Passport" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Readiness" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Appointment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Floors" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="AutorizedUser_StatementRealEstate" Member="AutorizedUser" ThisKey="Passport" OtherKey="Passport" Type="AutorizedUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

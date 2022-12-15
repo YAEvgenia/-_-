@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CadastreManagment.Minerals>
+
+@{
+    ViewBag.Title = "IndexId";
+}
+
+<h2 class="zagolovok">Ваши кадастры полезных ископаемых</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Тип полезных ископаемых:
+        </th>
+        <th>
+            Адрес:
+        </th>
+        <th>
+            Стоимость:
+        </th>
+        <th>
+            Дата регистрации:
+        </th>
+        <th>
+            Паспортные данные владельца:
+        </th>
+        <th>
+            Объем:
+        </th>
+        <th>
+            Налоговый коэффициент:
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approval_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Passport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tax_coefficint)
+        </td>
+        <td>
+            @Html.ActionLink("Налоги", "IndexId", "Tax", new { cadastreId = item.Id, cadastreType = "Minerals" }, new { @class = "edit" })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,82 @@
+﻿@model CadastreManagment.WaterCadastre
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="zagolovok">Подробнее</h2>
+
+<div>
+    <p class="parametr" style="color:black">Водный кадастр</p>
+    <hr />
+    <dl >
+        <dt>
+            Площадь:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+
+        <dt>
+            Адрес:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            Тип водного объекта:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            Дата регистрации:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Approval_date)
+        </dd>
+
+        <dt>
+            Паспортные данные владельца:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            Налоговый коэффициент:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tax_coefficint)
+        </dd>
+
+        <dt>
+            Уровень загрязненности:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Water_quality)
+        </dd>
+
+        <dt>
+            Очитстительные станции:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Water_management_facilities)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Edit", new { id = Model.Id }, new { @class = "edit" }) |
+    @Html.ActionLink("Вернуться к списку", "Index", null, new { @class = "details" })
+</p>
